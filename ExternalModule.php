@@ -25,15 +25,25 @@ class ExternalModule extends AbstractExternalModule {
 
       global $Proj, $redcap_version;
 
+      // Get values from settings.
       $source_instruments = AbstractExternalModule::getProjectSetting('ssptf_source_instrument');
+      $active_instruments = AbstractExternalModule::getProjectSetting('ssptf_target_active_field');
+      $compact_pdf = AbstractExternalModule::getProjectSetting('ssptf_compact_pdf');
+      
+      // Safety check to see to make sure compact_pdf has a value as not manditory  
+      if (!$compact_pdf)
+                $compact_pdf = 'false';
 
-      //check if instrument is the same one set in config
-      $index = array_search($instrument, $source_instruments);
+      //check if instrument is the same as the target form
+      $index = array_search($instrument, $active_instruments);
 
       //abort hook if not
       if($index === FALSE) {
         return 0;
       }
+       
+      // the name of the form to save into a PDF - first value from array.  
+      $form_to_convert = $source_instruments[0];  
 
       //get target upload field from config
       $target_fields = AbstractExternalModule::getProjectSetting('ssptf_target_upload_field');
@@ -63,7 +73,8 @@ class ExternalModule extends AbstractExternalModule {
       }
 
       //make pdf and store it in a temp directory
-      $path_to_temp_file = makePDF($project_id, $record, $instrument, $event_id, $repeat_instance);
+      //added compact PDF call to function  
+      $path_to_temp_file = makePDF($project_id, $record, $instrument, $event_id, $repeat_instance,$compact_pdf);
 
       if ($writable) {
           //upload pdf into designated upload field
