@@ -76,7 +76,22 @@
               "required": true,
               "type": "field-list",
               "repeatable": false
+            },
+            {
+              "key": "ssptf_target_active_field",
+              "name": "Form when saved, triggers the PDF conversion to a field",
+              "required": true,
+              "type": "form-list",
+              "repeatable": false
             }
+             ,
+            {
+              "key": "ssptf_compact_pdf",
+              "name": "Save compact version of PDF",
+              "required": false,
+              "type": "checkbox",
+              "repeatable": false
+            }  
           ]
       }
     ],
