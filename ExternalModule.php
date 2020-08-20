@@ -35,14 +35,8 @@ class ExternalModule extends AbstractExternalModule {
         return 0;
       }
 
-      // Count number of matched targets
-      $target_cnt=count($indices);
-
       // Iterate along dictionary of targeted keys
-      for($target = 0; $target <= $target_cnt-1; $target++) {
-
-          // Recover index for the current target
-          $index = $indices[$target];
+      foreach ($indices as $target => $index) {
 
           //get target upload field from config
           $target_fields = AbstractExternalModule::getProjectSetting('ssptf_target_upload_field');
@@ -50,7 +44,6 @@ class ExternalModule extends AbstractExternalModule {
 
           //Determine target field name
           $matches = array();
-          $index = 1;
           $target_upload_field_name = $target_upload_field;
           if (preg_match('#^(.+)_([0-9]+)$#', $target_upload_field, $matches)) {
               $target_upload_field_name = $matches[1];
