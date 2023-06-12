@@ -7,28 +7,8 @@
     ],
     "authors": [
         {
-            "name": "Dileep Rajput",
-            "email": "rajputd@ufl.edu",
-            "institution": "University of Florida - CTS-IT"
-        },
-        {
-            "name": "Philip B. Chase",
-            "email": "pbc@ufl.edu",
-            "institution": "University of Florida - CTS-IT"
-        },
-        {
-            "name": "Taryn Stoffs",
-            "email": "tls@ufl.edu",
-            "institution": "University of Florida - CTS-IT"
-        },
-        {
-            "name": "Tiago Bember Simeao",
-            "email": "tbembersimeao@ufl.edu",
-            "institution": "University of Florida - CTS-IT"
-        },
-        {
-            "name": "Marly Cormar",
-            "email": "marlycormar@ufl.edu",
+            "name": "University of Florida CTS-IT",
+            "email": "CTSIT-REDCAP-MODULE-SUPPO@LISTS.UFL.EDU",
             "institution": "University of Florida - CTS-IT"
         }
       ],
