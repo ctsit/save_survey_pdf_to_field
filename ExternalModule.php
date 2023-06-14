@@ -28,7 +28,12 @@ class ExternalModule extends AbstractExternalModule {
       $source_instruments = AbstractExternalModule::getProjectSetting('ssptf_source_instrument');
 
       //check if instrument is the same one set in config
-      $indices = array_keys($source_instruments, $instrument);
+      // NOTE: array_keys($foo, NULL) throws an error in PHP 8+
+      if (is_null($instrument)) {
+        $indices == FALSE;
+      } else {
+        $indices = array_keys($source_instruments, $instrument);
+      }
 
       //abort hook if not
       if($indices === FALSE) {
