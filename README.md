@@ -1,3 +1,7 @@
+# End-of-Life Notice
+
+This project is officially end-of-life. The Vanderbilt University Medical Center team incorporated the functionality of this module into REDCap 10.6.0 on 2020-11-30. They are part of the survey option “Save a PDF of completed survey response to a File Upload field”. We recommend all users of the module reconfigure their REDCap projects to use the features in REDCap core. Release 1.1.3 of this module will be the last version released. Users are welcome to fork this module for their own use, but UF CTS-IT will no longer be providing support or updates.
+
 # Save Survey PDF to a Field
 
 This REDCap module generates a PDF of a survey upon completion and saves it to a REDCap file upload field. It is configured at the project level with source instrument/target field pairs. In the event of save errors, the PDF is sent to a backup email address.
